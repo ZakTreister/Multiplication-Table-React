@@ -2,9 +2,9 @@
 <html>
 
 <head>
-    <script src="../build/react.js"></script>
-    <script src="../build/react-dom.js"></script>
-    <script src="../build/browser.min.js"></script>
+    <script src="../../build/react.js"></script>
+    <script src="../../build/react-dom.js"></script>
+    <script src="../../build/browser.min.js"></script>
 </head>
 
 <body>
@@ -18,19 +18,11 @@
             <tbody>
                     {
                         (new Array(10)).fill().map(function (item, i){
-                                
-                                return i+1;
-
-                            }).map(function(item, i){
-
-                                return <tr>{(new Array(10)).fill().map(function(sub, j){
-                                    
-                                    return <td>{item*(j+1)}</td>;
-
+                                return <tr key={i}>{(new Array(10)).fill().map(function(sub, j){
+                                    return <td key={j}>{(i+1)*(j+1)}</td>;
                                 })}</tr>
-
-                            })
-                        }
+                        })
+                    }
             </tbody>
         </table>,
         document.getElementById('root')
