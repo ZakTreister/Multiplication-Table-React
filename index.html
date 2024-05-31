@@ -1,33 +1,32 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <script src="../../build/react.js"></script>
     <script src="../../build/react-dom.js"></script>
     <script src="../../build/browser.min.js"></script>
-</head>
+  </head>
 
-<body>
-
+  <body>
+    <h1>This is a title</h1>
     <div id="root"></div>
 
     <script type="text/babel">
-    ReactDOM.render(
+      ReactDOM.render(
         <table>
-            <tbody>
-                    {
-                        (new Array(10)).fill().map(function (item, i){
-                                return <tr key={i}>{(new Array(10)).fill().map(function(sub, j){
-                                    return <td key={j}>{(i+1)*(j+1)}</td>;
-                                })}</tr>
-                        })
-                    }
-            </tbody>
+          <tbody>
+            {new Array(10).fill().map(function (item, i) {
+              return (
+                <tr key={i}>
+                  {new Array(10).fill().map(function (sub, j) {
+                    return <td key={j}>{(i + 1) * (j + 1)}</td>;
+                  })}
+                </tr>
+              );
+            })}
+          </tbody>
         </table>,
-        document.getElementById('root')
+        document.getElementById("root")
       );
     </script>
-
-</body>
-
+  </body>
 </html>
